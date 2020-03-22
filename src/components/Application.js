@@ -4,8 +4,7 @@ import DayList from "components/DayList";
 import Appointment from 'components/Appointment'
 import "components/Application.scss";
 import "components/Appointment"
-import getAppointmentsForDay from "../helpers/selectors.js"
-import {getInterview} from "../helpers/selectors.js"
+import {getAppointmentsForDay, getInterview} from "../helpers/selectors.js"
 
 export default function Application(props) {
   const [state, setState] = useState({
