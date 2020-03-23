@@ -14,6 +14,7 @@ export default function Application(props) {
     interviewers: {}
   });
   const appointments = getAppointmentsForDay(state, state.day)
+ 
   function renderAppointments() {
     const addAppointments = appointments.map(appointment => {
       const interview = getInterview(state, appointment.interview);
@@ -29,6 +30,7 @@ export default function Application(props) {
     return (
       <ul>
         {addAppointments}
+        <Appointment key="last" time="5pm" />
       </ul>
     );
   }
