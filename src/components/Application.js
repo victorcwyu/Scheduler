@@ -35,10 +35,8 @@ export default function Application(props) {
     };
     return axios.delete(`/api/appointments/${id}`, appointment).then(setState(state => ({ ...state, appointments })));
   }
-
   const appointments = getAppointmentsForDay(state, state.day)
   const interviewers = getInterviewersForDay(state, state.day)
- 
   function renderAppointments() {
     const addAppointments = appointments.map(appointment => {
       const interview = getInterview(state, appointment.interview);
