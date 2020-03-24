@@ -5,22 +5,17 @@ import Button from "components/Button"
 import InterviewerList from "components/InterviewerList"
 
 export default function Form(props) {
-
   const [name, setName] = useState(props.name || "");
-
   const [interviewer, setInterviewer] = useState(props.interviewer || null);
-
   const reset = function() {
     setName("");
     setInterviewer(null);
   };
-
   const cancel = function() {
     setInterviewer(null)
     setName("")
     props.onCancel()
   }
-
   return (
     <main className="appointment__card appointment__card--create">
       <section className="appointment__card-left">
