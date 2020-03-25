@@ -22,9 +22,9 @@ export default function Application(props) {
       ...state.appointments,
       [id]: appointment
     };
-    return axios.put(`/api/appointments/${id}`, appointment).then(setState(state => ({...state, appointments})));
+    return axios.put(`/api/appointments/${id}`, appointment).then(() => { setState(state => ({ ...state, appointments })) });
   }
-  function cancelInterview(id, interview) {
+  function cancelInterview(id) {
     const appointment = {
       ...state.appointments[id],
       interview: null
@@ -33,7 +33,7 @@ export default function Application(props) {
       ...state.appointments,
       [id]: appointment
     };
-    return axios.delete(`/api/appointments/${id}`, appointment).then(setState(state => ({ ...state, appointments })));
+    return axios.delete(`/api/appointments/${id}`, appointment).then(() => { setState(state => ({ ...state, appointments })) });
   }
   const appointments = getAppointmentsForDay(state, state.day)
   const interviewers = getInterviewersForDay(state, state.day)
