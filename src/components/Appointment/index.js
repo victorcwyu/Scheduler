@@ -46,7 +46,7 @@ export default function Appointment(props) {
     props.cancelInterview(props.id).then(() => transition(EMPTY)).catch(() => transition(ERROR_DELETE, true));
   }
   return (
-    <article className="appointment">
+    <article className="appointment" data-testid="appointment">
       <Header time={props.time} />
       {mode === EMPTY && <Empty onAdd={() => transition(CREATE)} />}
       {mode === SHOW && (
