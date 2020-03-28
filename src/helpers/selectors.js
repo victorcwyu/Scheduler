@@ -15,22 +15,9 @@ const getAppointmentsForDay = function(state, day) {
 };
 
 const getInterviewersForDay = function (state, day) {
-  const filteredDays = state.days.filter(dayOfDays => dayOfDays.name === day);
-  if (!day || filteredDays === [] || filteredDays[0] === undefined) {
-    return [];
-  };
-  const { appointments } = filteredDays[0];
-  const appointmentsArr = Object.values(state.appointments);
-  let result = [];
-  for (let item of appointmentsArr) {
-    if (!appointments.includes(item.id) && item.interview) {
-      const interviewer = item.interview.interviewer.toString()
-      if (!result.includes(state.interviewers[interviewer])) {
-        result.push(state.interviewers[interviewer])
-      }
-    };
-  };
-  return result;
+  const dayObj = state.days.find(x => x.name === day);
+  if (!dayObj) { return []; }
+  return dayObj.interviewers.map(id => state.interviewers[id]);
 };
 
 const getInterview = function(state, interview) {

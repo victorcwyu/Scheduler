@@ -12,6 +12,7 @@ InterviewerList.propTypes = {
 }
 
 export default function InterviewerList(props) {
+  console.log('InterviewerList: ', { props });
   const interviewers = props.interviewers.map(interviewer => {
     return (
       <InterviewerListItem
