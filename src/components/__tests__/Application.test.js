@@ -24,7 +24,7 @@ describe("Application", () => {
     fireEvent.change(getByPlaceholderText(appointment, /enter student name/i), {
       target: { value: "Lydia Miller-Jones" }
     });
-    fireEvent.click(getByAltText(appointment, "Cohana Roy"));
+    fireEvent.click(getByAltText(appointment, "Sylvia Palmer"));
     fireEvent.click(getByText(appointment, "Save"));
     expect(getByText(appointment, "Saving")).toBeInTheDocument();
     await waitForElement(() => getByText(appointment, "Lydia Miller-Jones"));
@@ -61,7 +61,7 @@ describe("Application", () => {
     fireEvent.change(getByPlaceholderText(appointment, /enter student name/i), {
       target: { value: "Lydia Miller-Jones" }
     });
-    fireEvent.click(getByAltText(appointment, "Cohana Roy"));
+    fireEvent.click(getByAltText(appointment, "Sylvia Palmer"));
     fireEvent.click(getByText(appointment, "Save"));
     expect(getByText(appointment, "Saving")).toBeInTheDocument();
     await waitForElement(() => getByText(appointment, "Lydia Miller-Jones"));
@@ -81,7 +81,7 @@ describe("Application", () => {
     fireEvent.change(getByPlaceholderText(appointment, /enter student name/i), {
       target: { value: "Lydia Miller-Jones" }
     });
-    fireEvent.click(getByAltText(appointment, "Cohana Roy"));
+    fireEvent.click(getByAltText(appointment, "Sylvia Palmer"));
     fireEvent.click(getByText(appointment, "Save"));
     await waitForElement(() => getByText(appointment, "Could not save appointment."));
     expect(getByText(appointment, "Could not save appointment.")).toBeInTheDocument();
