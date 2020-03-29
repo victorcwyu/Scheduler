@@ -3,13 +3,16 @@
 ## About this project
 
 Using the latest tools and techniques, I built and tested a React application that allows users to book and cancel interviews.  
+
 This app combines a concise API with a WebSocket server to build a realtime experience.
 
-The Scheduler client application was created using Create React App. 
+The Scheduler client application was created using Create React App.
+
 Express is the basis for the Scheduler API server application.
+
 Both servers run concurrently; requests are proxied from the Webpack development server to the API server.
 
-## Screenshot Preview
+## Preview
 
 !["Screenshot of scheduler application"](https://github.com/victorcwyu/scheduler/blob/master/docs/scheduler-preview.png?raw=true)
 
