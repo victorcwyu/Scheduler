@@ -1,4 +1,4 @@
-# Interview Scheduler
+# Scheduler
 
 ## About this project
 
