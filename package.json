@@ -10,6 +10,7 @@
     "highlight.js": "^10.4.1",
     "http-proxy": "^1.18.1",
     "ini": "^1.3.6",
+    "lodash": "^4.17.19",
     "markdown-to-jsx": "^6.11.4",
     "node-fetch": "^2.6.1",
     "node-forge": "^0.10.0",
