@@ -10,10 +10,10 @@ import "components/Appointment";
 
 import useApplicationData from "../hooks/useApplicationData";
 
-import { 
-  getAppointmentsForDay, 
-  getInterviewersForDay, 
-  getInterview
+import {
+  getAppointmentsForDay,
+  getInterviewersForDay,
+  getInterview,
 } from "../helpers/selectors.js";
 
 export default function Application(props) {
@@ -21,16 +21,17 @@ export default function Application(props) {
     state,
     setDay,
     bookInterview,
-    cancelInterview
+    cancelInterview,
   } = useApplicationData();
 
   const interviewers = getInterviewersForDay(state, state.day);
 
-  const appointments = getAppointmentsForDay(state, state.day)
-  
+  const appointments = getAppointmentsForDay(state, state.day);
+
   function renderAppointments() {
-    const addAppointments = appointments.map(appointment => {
+    const addAppointments = appointments.map((appointment) => {
       const interview = getInterview(state, appointment.interview);
+      console.log("dis", interview);
       return (
         <Appointment
           key={appointment.id}
@@ -40,7 +41,7 @@ export default function Application(props) {
           interviewers={interviewers}
           bookInterview={bookInterview}
           cancelInterview={cancelInterview}
-         />
+        />
       );
     });
 
@@ -50,8 +51,8 @@ export default function Application(props) {
         <Appointment key="last" time="5pm" />
       </ul>
     );
-  };
-  
+  }
+
   return (
     <main className="layout">
       <section className="sidebar">
@@ -62,11 +63,7 @@ export default function Application(props) {
         />
         <hr className="sidebar__separator sidebar--centered" />
         <nav className="sidebar__menu">
-          <DayList 
-            days={state.days} 
-            day={state.day} 
-            setDay={setDay} 
-          />
+          <DayList days={state.days} day={state.day} setDay={setDay} />
         </nav>
         <img
           className="sidebar__lhl sidebar--centered"
@@ -74,9 +71,7 @@ export default function Application(props) {
           alt="Lighthouse Labs"
         />
       </section>
-      <section className="schedule">
-        {renderAppointments()}
-      </section>
+      <section className="schedule">{renderAppointments()}</section>
     </main>
   );
-};
+}
